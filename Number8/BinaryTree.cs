@@ -158,7 +158,7 @@ namespace Number8
 
         #region ConsolePrint
 
-        public void Print(int topMargin = 2, int leftMargin = 2)
+        public void Print(int topMargin = 1, int leftMargin = 2)
         {
             Print(_root, topMargin, leftMargin);
         }

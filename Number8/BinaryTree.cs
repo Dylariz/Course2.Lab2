@@ -19,22 +19,6 @@ namespace Number8
             }
         }
 
-        class NodeInfo
-        {
-            public Node Node;
-            public string Text;
-            public int StartPos;
-            public int Size => Text.Length;
-
-            public int EndPos
-            {
-                get => StartPos + Size;
-                set => StartPos = value - Size;
-            }
-
-            public NodeInfo Parent, Left, Right;
-        }
-
         private Node _root;
 
         public BinaryTree()
@@ -50,8 +34,6 @@ namespace Number8
                 Insert(t);
             }
         }
-
-
         public void Clear()
         {
             _root = null;
@@ -125,17 +107,14 @@ namespace Number8
             {
                 return 0;
             }
-
             if (level == 1)
             {
                 return 1;
             }
-
             if (level > 1)
             {
                 return GetTreeWidth(current.Left, level - 1) + GetTreeWidth(current.Right, level - 1);
             }
-
             return 0;
         }
 
@@ -158,6 +137,22 @@ namespace Number8
 
         #region ConsolePrint
 
+        private class NodeInfo
+        {
+            public Node Node;
+            public string Text;
+            public int StartPos;
+            public int Size => Text.Length;
+
+            public int EndPos
+            {
+                get => StartPos + Size;
+                set => StartPos = value - Size;
+            }
+
+            public NodeInfo Parent, Left, Right;
+        }
+        
         public void Print(int topMargin = 1, int leftMargin = 2)
         {
             Print(_root, topMargin, leftMargin);

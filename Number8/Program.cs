@@ -10,7 +10,7 @@ namespace Number8
             var random = new Random();
             var list = new List<int>();
             
-            for (int i = 0; i < random.Next(15, 30); i++)
+            for (int i = 0; i < 30; i++)
             {
                 list.Add(random.Next(0, 100));
             }
@@ -29,6 +29,7 @@ namespace Number8
             
             Console.WriteLine("Дерево, целиком:");
             tree.Print();
+            Console.ReadLine();
         }
     }
 }
